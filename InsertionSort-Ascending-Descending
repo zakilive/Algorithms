@@ -1,0 +1,50 @@
+#include<stdio.h>
+int main()
+{
+    int i,j,n,key,ary[30];
+
+printf("Enter total elements:");
+scanf("%d",&n);
+
+printf("Enter %d elements: ",n);
+for(i=0;i<n;i++){
+scanf("%d",&ary[i]);
+}
+
+//Ascending order
+
+for(i=1;i<n;i++)
+{
+    key=ary[i];
+    j=i-1;
+    while((j>=0)&&(ary[j]>key)){
+        ary[j+1]=ary[j];
+        j=j-1;
+    }
+    ary[j+1]=key;
+}
+
+printf("After Sorting Ascending Order: ");
+for(i=0;i<n;i++)
+{
+    printf(" %d",ary[i]);
+}
+//Descending Order
+for(i=1;i<n;i++)
+{
+    key=ary[i];
+    j=i-1;
+    while((j>=0)&&(ary[j]<key)){
+        ary[j+1]=ary[j];
+        j=j-1;
+    }
+    ary[j+1]=key;
+}
+
+printf("\nAfter Sorting Descending Order: ");
+for(i=0;i<n;i++)
+{
+    printf(" %d",ary[i]);
+}
+return 0;
+}
